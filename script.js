@@ -337,8 +337,9 @@ hideWordBtn.addEventListener('click', () => {
 
 function nextPlayer() {
     if (currentPlayer > numPlayers) {
-        playerTurnInfo.textContent = "Gramy!";
         alert("Zaczyna gracz nr " + startPlayer);
+        playerTurnInfo.textContent = "Gramy!";
+        
         displayWord.textContent = "";
         nextPlayerBtn.style.display = 'none';
         hideWordBtn.style.display = 'none';
