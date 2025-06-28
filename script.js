@@ -314,7 +314,7 @@ startGameBtn.addEventListener('click', () => {
         return;
     }
     
-    spyPlayerIndex = Math.floor(Math.random() * numPlayers) + 1; 
+    spyPlayerIndex = Math.floor(Math.random() * numPlayers); 
     currentWord = words[Math.floor(Math.random() * words.length)]; 
 
     startScreen.style.display = 'none';
