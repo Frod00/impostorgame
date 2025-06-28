@@ -314,7 +314,7 @@ startGameBtn.addEventListener('click', () => {
         return;
     }
     
-    spyPlayerIndex = Math.floor(Math.random() * numPlayers); 
+    spyPlayerIndex = Math.floor(Math.random() * numPlayers) + 1; 
     currentWord = words[Math.floor(Math.random() * words.length)]; 
 
     startScreen.style.display = 'none';
@@ -330,6 +330,7 @@ hideWordBtn.addEventListener('click', () => {
     displayWord.textContent = "Hasło zostało ukryte. Teraz podaj telefon dalej";
     hideWordBtn.style.display = 'none';
     nextPlayerBtn.style.display = 'block';
+    currentPlayer++;
 });
 
 function nextPlayer() {
@@ -356,5 +357,5 @@ function nextPlayer() {
         hideWordBtn.style.display = 'block';
     }, 3000);
 
-    currentPlayer++;
+    
 }
