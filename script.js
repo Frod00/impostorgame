@@ -306,6 +306,7 @@ let currentWord = "";
 let numPlayers = 0;
 let spyPlayerIndex = -1;
 let currentPlayer = 1;
+let startPlayer = -1;
 
 startGameBtn.addEventListener('click', () => {
     numPlayers = parseInt(numPlayersInput.value);
@@ -316,7 +317,8 @@ startGameBtn.addEventListener('click', () => {
     
     spyPlayerIndex = Math.floor(Math.random() * numPlayers) + 1; 
     currentWord = words[Math.floor(Math.random() * words.length)]; 
-
+    startPlayer = Math.floor(Math.random() * numPlayers) + 1;
+    
     startScreen.style.display = 'none';
     gameScreen.style.display = 'block';
     nextPlayer();
@@ -336,6 +338,7 @@ hideWordBtn.addEventListener('click', () => {
 function nextPlayer() {
     if (currentPlayer > numPlayers) {
         playerTurnInfo.textContent = "Gramy!";
+        alert("Zaczyna gracz nr " + startPlayer);
         displayWord.textContent = "";
         nextPlayerBtn.style.display = 'none';
         hideWordBtn.style.display = 'none';
